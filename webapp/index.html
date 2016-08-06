@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+
+    <title>Underscore & Director & Requirejs</title>
+
+    <style type="text/css">
+    .load {
+        position: absolute;
+        top: 40%;
+        left: 45%;
+        width: 50px;
+        background: url(images/load.gif) no-repeat right center;
+    }
+    </style>
+</head>
+
+<body>
+    <div class="load">&nbsp;</div>
+
+    <div id="containerTop"></div>
+    <div id="container" class="container"></div>
+    <div id="containerBottom"></div>
+
+    <link type="text/css" rel="stylesheet" href="libs/weui.min.css" />
+
+    <link type="text/css" rel="stylesheet" href="module/css/base.css" />
+
+    <link type="text/css" rel="stylesheet" href="module/css/test.css" />
+    <link type="text/css" rel="stylesheet" href="module/css/test1.css" />
+
+    <script type="text/javascript" src="libs/jquery.js" onload="console.log(1)"></script>
+    <script type="text/javascript" src="libs/moment.js" onload="console.log(2)"></script>
+    <!-- underscore-min.map -->
+    <script type="text/javascript" src="libs/underscore-min.js" onload="console.log(3)"></script>
+
+    <script type="text/javascript" src="libs/require.js" data-main="main.js"></script>
+</body>
+
+</html>
