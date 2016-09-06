@@ -14,20 +14,12 @@
 
     require.config(config);
 
-    win.appView = $('#container'); //用于各个模块控制视图变化
-    win.topView = $('#containerTop'); //TOP
-    win.bottomView = $('#containerBottom'); //BOTTOM
+    win.appView = $('.container'); //用于各个模块控制视图变化
 
     require(['core/WindowManager'], function(WindowManager) {
         win.gWindowManager = WindowManager;
 
-        WindowManager.init(); //开始监控url变化
+        WindowManager.pushState('home');
 
-        WindowManager._setState('#home', {
-            title: 'ssssssssssssss'
-        });
-        //WindowManager.setBottom('#bottom');
     });
-
-
 })(window);

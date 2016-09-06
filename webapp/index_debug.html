@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+    <!--<script src="http://192.168.0.102:926/target/target-script-min.js#anonymous"></script>-->
+
+    <title>Underscore & Director & Requirejs</title>
+
+</head>
+
+<body ontouchstart>
+    <div class="container"></div>
+</body>
+
+<link rel="stylesheet" type="text/css" href="all.css" />
+
+<script type="text/javascript" src="libs/jquery.js"></script>
+<script type="text/javascript">
+var width = document.body.clientWidth;
+$('html').css('font-size', width / 640 * 100 + 'px');
+</script>
+
+
+<script type="text/javascript" src="libs/plugins.js"></script>
+
+<script type="text/javascript" src="libs/moment.js"></script>
+<!-- underscore-min.map -->
+<script type="text/javascript" src="libs/underscore-min.js"></script>
+
+<script type="text/javascript" src="libs/net_ease.js"></script>
+
+<!--script type="text/javascript" src="libs/touch.js"></script-->
+
+<script type="text/javascript" src="libs/iscroll-infinite.js"></script>
+
+
+<script type="text/javascript" src="libs/require.js" data-main="main.js"></script>
+
+
+</html>

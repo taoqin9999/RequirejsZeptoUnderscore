@@ -23,19 +23,61 @@ define(function(require, exports, module) {
          */
         initialize: function(options) {
             console.log('Base..........initialize..options:' + options);
+            this.viewControllers = null;
         },
         /**
-         * 设置模板初始化需要的数据，如果未设置，就使用url的参数（?name=**&age=**）
+         * 设置模板初始化需要的数据
          * @return {[type]} [description]
          */
         loadData: function() {
             return $.Deferred().resolve();
         },
         /**
+         * 页面监听事件列表
+         * @return {[type]} [description]
+         */
+        listNotificationInterests: function() {
+            return [];
+        },
+
+        /**
+         * 页面事件处理
+         * @param  {[type]} notification [description]
+         * @return {[type]}              [description]
+         */
+        handleNotification: function(notification) {
+
+        },
+        /**
+         * 初始化
+         * @return {[type]} [description]
+         */
+        initView: function() {
+            this._view = $(this._viewId);
+
+            //开始监听事件
+
+            //页面事件处理
+            var self = this;
+            var eventNames = this.listNotificationInterests ? this.listNotificationInterests() : [];
+
+            if (eventNames.length) {
+                _.each(eventNames, function(eventName) {
+                    netEase.EventManager.on(eventName, self.handleNotification, self);
+                });
+            }
+
+            this.viewDidInit();
+            this.viewDidShow();
+        },
+        /**
          * 页面隐藏时调用
          * @return {[type]} [description]
          */
         hideView: function() {
+            if (this.isChild) {
+                this._view.hide();
+            }
             this.viewDidHide();
             console.log('Base..........hideView...');
         },
@@ -46,6 +88,10 @@ define(function(require, exports, module) {
          * @return {[type]}         [description]
          */
         showView: function() {
+            if (this.isChild) {
+                this._view.show();
+            }
+
             this.viewDidShow();
             console.log('Base..........showView...');
         },
@@ -55,6 +101,32 @@ define(function(require, exports, module) {
          */
         destroy: function() {
             console.log('Base..........destroy...');
+
+            //删除模板
+            var self = this;
+            this._view.addClass('slideOut').on('animationend', function() {
+                self._view.remove();
+                self._destroy();
+            }).on('webkitAnimationEnd', function() {
+                self._view.remove();
+                self._destroy();
+            });
+
+
+        },
+        _destroy: function() {
+            //取消监听事件
+            var self = this;
+            var eventNames = this.listNotificationInterests ? this.listNotificationInterests() : [];
+            _.each(eventNames, function(eventName) {
+                netEase.EventManager.off(eventName, self.handleNotification, self);
+            });
+
+            //销毁子页面
+            for (var p in this.viewControllers) {
+                p.destroy();
+            }
+
             this.viewDidDestroy();
 
             for (var p in this) {
@@ -64,6 +136,13 @@ define(function(require, exports, module) {
             }
 
             this.destroy = function() {};
+        },
+        /**
+         * 页面初次加载完初始化
+         * @return {[type]} [description]
+         */
+        viewDidInit: function() {
+            console.log('Base..........viewDidInit...');
         },
         /**
          * 页面隐藏时调用，给页面覆盖使用，处理页面自己的逻辑
@@ -86,8 +165,21 @@ define(function(require, exports, module) {
          */
         viewDidDestroy: function() {
             console.log('Base..........viewDidDestroy...');
+        },
+        /**
+         * 添加子页面
+         * @param {[type]} viewId         [description]
+         * @param {[type]} viewController [description]
+         */
+        addChildViewController: function(viewId, viewController) {
+            if (!this.viewControllers) {
+                this.viewControllers = {};
+            }
+
+            this.viewControllers[viewId] = viewController;
         }
     };
+
     Base.extend = extend;
 
     exports = module.exports = Base;

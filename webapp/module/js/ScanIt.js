@@ -5,23 +5,30 @@ define(function(require, exports, module) {
 
     var Clas = BClass.extend({
         initialize: function(options) {
-            console.log('test..........initialize..options:' + options);
+            console.log('scanIt..........initialize..options:' + options);
         },
         loadData: function() {
             return $.Deferred().resolve();
         },
         viewDidHide: function() {
-            console.log('test..........viewDidHide...');
+            console.log('scanIt..........viewDidHide...');
         },
         viewDidShow: function() {
             console.log('test..........viewDidShow...');
         },
         viewDidInit: function() {
             console.log('test..........viewDidInit...');
+            this._view.click(function() {
+                gWindowManager.back();
+            });
 
+            this._view.find('.baidu').click(function(event) {
+                alert('1111111111111111');
+                event.stopPropagation();
+            });
         },
         viewDidDestroy: function() {
-            console.log('test..........viewDidDestroy...');
+            console.log('scanIt..........viewDidDestroy...');
         }
     });
 

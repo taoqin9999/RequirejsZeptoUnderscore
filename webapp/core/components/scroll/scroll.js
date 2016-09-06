@@ -1,23 +1,14 @@
 define(function(require, exports, module) {
     'use strict';
 
-    var List = function() {};
-    List.prototype = {
+    var Scroll = function() {};
+    Scroll.prototype = {
         init: function(controller, $view) {
-            var $lists = $view.find('div[data-role="List"]');
-            _.each($lists, function(list) {
-                var $list = $(list);
-                var listId = $list.attr('id');
-                var len = controller.numberOfItems(listId);
+            var listRole = $view.attr('data-role');
+            if (listRole === 'Scroll') {
+                var listId = $view.attr('id');
 
-                var itemHtmls = '';
-                for (var i = 0; i < len; i++) {
-                    itemHtmls += controller.willDisplayItem(listId, i);
-                }
-
-                $list.find('.container').html(itemHtmls);
-
-                var listType = $list.attr('data-type');
+                var listType = $view.attr('data-type');
 
                 if (listType === 'X') {
                     new IScroll('#' + listId, {
@@ -36,9 +27,9 @@ define(function(require, exports, module) {
                         scrollY: true
                     });
                 }
-            });
+            }
         }
     };
 
-    exports = module.exports = List;
+    exports = module.exports = Scroll;
 });

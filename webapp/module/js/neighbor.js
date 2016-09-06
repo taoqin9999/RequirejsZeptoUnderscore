@@ -5,7 +5,7 @@ define(function(require, exports, module) {
 
     var Clas = BClass.extend({
         initialize: function(options) {
-            console.log('test..........initialize..options:' + options);
+
         },
         loadData: function() {
             return $.Deferred().resolve();

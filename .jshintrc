@@ -1,0 +1,98 @@
+{
+    "maxerr": 500, // {int} Maximum error before stopping --- best practice
+    "esnext": true, // false at Huawei, true: Allow ES.next (ES6) syntax (ex: `const`) --- best practice
+    "bitwise": true, // true: Prohibit bitwise operators (&, |, ^, etc.) --- best practice
+    "camelcase": false, // false at Huawei, true: Identifiers must be in camelCase  --- http://google-styleguide.googlecode.com/svn/trunk/javascriptguide.xml#Naming
+    "curly": true, // true: Require {} for every new block or scope --- http://google-styleguide.googlecode.com/svn/trunk/javascriptguide.xml#Code_formatting
+    "eqeqeq": true, // true: Require triple equals (===) for comparison --- best practice
+    "forin": false, // true at Huawei, true: Require filtering for..in loops with obj.hasOwnProperty() --- best practice
+    "noempty": true, // true: Prohibit use of empty blocks --- best practice
+    "nonew": false, // true: Prohibit use of constructors for side-effects (without assignment) --- best practice
+    "plusplus": false, // true: Prohibit use of `++` & `--` --- best practice
+    "immed": true, // false at Huawei, true: Require immediate invocations to be wrapped in parens e.g. `(function () { } ());` --- http://google-styleguide.googlecode.com/svn/trunk/javascriptguide.xml#Code_formatting
+    "indent": 4, // false at Huawei, {int} Number of spaces to use for indentation --- http://google-styleguide.googlecode.com/svn/trunk/javascriptguide.xml#Code_formatting
+    "latedef": true, // true: Require variables/functions to be defined before being used --- best practice
+    "newcap": true, // false at Huawei, true: Require capitalization of all constructor functions e.g. `new F()` --- best practice
+    "noarg": true, // true: Prohibit use of `arguments.caller` and `arguments.callee` --- best practice
+    "quotmark": "single", // Quotation mark consistency:            --- http://google-styleguide.googlecode.com/svn/trunk/javascriptguide.xml?showone=Strings#Strings
+    //   false    : do nothing (default)
+    //   true     : ensure whatever is used is consistent
+    //   "single" : require single quotes
+    //   "double" : require double quotes
+    "undef": true, // true: Require all non-global variables to be declared (prevents global leaks) --- http://google-styleguide.googlecode.com/svn/trunk/javascriptguide.xml?showone=var#var
+    "unused": true, // true: Require all defined variables be used --- best practice
+    "strict": true, // false at Huawei, true: Requires all functions run in ES5 Strict Mode --- best practice
+    "iterator": false, // true: Tolerate using the `__iterator__` property --- best practice, but regard http://google-styleguide.googlecode.com/svn/trunk/javascriptguide.xml?showone=Tips_and_Tricks#Tips_and_Tricks
+    "lastsemic": false, // true: Tolerate omitting a semicolon for the last statement of a 1-line block  --- http://google-styleguide.googlecode.com/svn/trunk/javascriptguide.xml?showone=Semicolons#Semicolons
+    "laxbreak": false, // true: Tolerate possibly unsafe line breakings --- http://google-styleguide.googlecode.com/svn/trunk/javascriptguide.xml?showone=Code_formatting#Code_formatting
+    "laxcomma": true, // false at Huawei, true: Tolerate comma-first style coding --- best practice
+    "loopfunc": false, // true: Tolerate functions being defined in loops --- http://google-styleguide.googlecode.com/svn/trunk/javascriptguide.xml?showone=Function_Declarations_Within_Blocks#Function_Declarations_Within_Blocks
+    "multistr": false, // true: Tolerate multi-line strings --- http://google-styleguide.googlecode.com/svn/trunk/javascriptguide.xml?showone=Strings#Multiline_string_literals
+    "notypeof": false, // missing at Huawei, true: This option suppresses warnings about invalid typeof operator values. --- best practice
+    "proto": false, // missing at Huawei, true: Tolerate using the `__proto__` property --- best practice
+    "scripturl": false, // missing at Huawei, true: Tolerate script-targeted URLs --- best practice
+    "trailing": true, // true: Prohibit trailing whitespaces --- best practice
+    "smarttabs": true, // false at Huawei, true: Tolerate mixed tabs/spaces when used for alignment --- best practice
+    "shadow": false, // true: Allows re-define variables later in code e.g. declaring a variable that had been already declared somewhere in the outer scope. --- best practice
+    "sub": false, // true: Tolerate using `[]` notation when it can still be expressed in dot notation --- best practice
+    "supernew": false, // true: Tolerate `new function () { ... };` and `new Object;` --- http://google-styleguide.googlecode.com/svn/trunk/javascriptguide.xml?showone=Array_and_Object_literals#Array_and_Object_literals
+    "validthis": false, // true: Tolerate using this in a non-constructor function --- http://google-styleguide.googlecode.com/svn/trunk/javascriptguide.xml?showone=Strings#this
+    "browser": true, // Web Browser (window, document, etc) --- enable Browser keywords
+    "jquery": true, // jQuery --- enable JQuery keywords
+    "node": true, // false at Huawei, Node.js --- enable Node.js keywords
+    "evil": false, // true: Tolerate use of `eval` and `new Function()` --- http://google-styleguide.googlecode.com/svn/trunk/javascriptguide.xml?showone=eval__#eval__
+    "funcscope": false, // true: This option suppresses warnings about declaring variables inside of control structures while accessing them later from the outside. --- best practice
+    "yui": false, // Yahoo User Interface --- enable yui keywords
+    "globals": {
+        "applicationCache": false,
+        "bs": false,
+        "gNavigationController": false,
+        "syncmod": false,
+        "module": false,
+        "test": false,
+        "ok": false,
+        "asyncTest": false,
+        "expect": false,
+        "start": false,
+        "stop": false,
+        "define": false,
+        "alert": false,
+        "beforeEach": false,
+        "afterEach": false,
+        "describe": false,
+        "it": false,
+        "jasmine": false,
+        "loadFixtures": false,
+        "eBase": false,
+        "_": false,
+        "$": false,
+        "moment": false,
+        "define": false,
+        "gWindowManager": false,
+        "gEventManager": false,
+        "gUtils": false,
+        "gFocusUI": false,
+        "gControllerSet": false,
+        "gTabbariewController": false,
+        "Utility": false,
+        "seajs": false,
+        "spyOn": false,
+        "gConfig": false,
+        "Deferred": false,
+        "MediaPlayer": false,
+        "requirejs": false,
+        "gAnimation": false,
+        "gNavigationController": false,
+        "gEnvironment": false,
+        "EnvironmentManager": false,
+        "gUsageTracking": false,
+        "templates": false,
+        "bs": false
+    },
+    "eqnull": true,
+    "maxparams": 7, // {int} Max number of formal params allowed per function --- best practice
+    "maxdepth": 4, // false at Huawei, {int} Max depth of nested blocks (within functions) --- best practice
+    "maxstatements": 60, // false at Huawei, {int} Max number statements per function --- best practice
+    "maxcomplexity": 12, // {int} Max cyclomatic complexity per function --- best practice
+    "maxlen": false // {int} Max number of characters per line --- best practice
+}

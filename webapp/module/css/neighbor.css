@@ -1,0 +1,16 @@
+#neighbor {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    .container {
+        width: 100%;
+        height: auto;
+    }
+    .banner3 {
+        height: 2.07rem;
+        .banner3Img {
+            height: auto;
+            width: 100%;
+        }
+    }
+}

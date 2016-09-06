@@ -11,7 +11,11 @@ define(function(require, exports, module) {
             console.log('test1..........viewDidHide...');
         },
         viewDidShow: function() {
-            console.log('test1..........viewDidShow...');
+            console.log('test..........viewDidShow...');
+        },
+        viewDidInit: function() {
+            console.log('test..........viewDidInit...');
+
         },
         viewDidDestroy: function() {
             console.log('test1..........viewDidDestroy...');

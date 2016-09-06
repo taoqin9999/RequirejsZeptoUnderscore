@@ -1,43 +1,59 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+    <!--<script src="http://192.168.0.102:926/target/target-script-min.js#anonymous"></script>-->
 
     <title>Underscore & Director & Requirejs</title>
 
-    <style type="text/css">
-    .load {
-        position: absolute;
-        top: 40%;
-        left: 45%;
-        width: 50px;
-        background: url(images/load.gif) no-repeat right center;
-    }
-    </style>
 </head>
 
-<body>
-    <div class="load">&nbsp;</div>
-
-    <div id="containerTop"></div>
-    <div id="container" class="container"></div>
-    <div id="containerBottom"></div>
-
-    <link type="text/css" rel="stylesheet" href="libs/weui.min.css" />
-
-    <link type="text/css" rel="stylesheet" href="module/css/base.css" />
-
-    <link type="text/css" rel="stylesheet" href="module/css/test.css" />
-    <link type="text/css" rel="stylesheet" href="module/css/test1.css" />
-
-    <script type="text/javascript" src="libs/jquery.js" onload="console.log(1)"></script>
-    <script type="text/javascript" src="libs/moment.js" onload="console.log(2)"></script>
-    <!-- underscore-min.map -->
-    <script type="text/javascript" src="libs/underscore-min.js" onload="console.log(3)"></script>
-
-    <script type="text/javascript" src="libs/require.js" data-main="main.js"></script>
+<body ontouchstart>
+    <div class="container"></div>
 </body>
+
+<link type="text/css" rel="stylesheet/less" href="module/css/base.css" />
+<link type="text/css" rel="stylesheet/less" href="module/css/home.css" />
+<link type="text/css" rel="stylesheet/less" href="module/css/homeContent.css" />
+<link type="text/css" rel="stylesheet/less" href="module/css/life.css" />
+<link type="text/css" rel="stylesheet/less" href="module/css/neighbor.css" />
+<link type="text/css" rel="stylesheet/less" href="module/css/personal.css" />
+<link type="text/css" rel="stylesheet/less" href="module/css/ScanIt.css" />
+<link type="text/css" rel="stylesheet/less" href="module/css/test.css" />
+<link type="text/css" rel="stylesheet/less" href="module/css/test1.css" />
+
+<link type="text/css" rel="stylesheet/less" href="core/components/list/list.css" />
+<link type="text/css" rel="stylesheet/less" href="core/components/scroll/scroll.css" />
+<link type="text/css" rel="stylesheet/less" href="core/components/waterfall/waterfall.css" />
+
+<script type="text/javascript" src="libs/jquery.js"></script>
+<script type="text/javascript">
+var width = document.body.clientWidth;
+$('html').css('font-size', width / 640 * 100 + 'px');
+</script>
+
+<script type="text/javascript" src="libs/plugins.js"></script>
+
+<script type="text/javascript" src="libs/moment.js"></script>
+<!-- underscore-min.map -->
+<script type="text/javascript" src="libs/underscore-min.js"></script>
+
+<script type="text/javascript" src="libs/net_ease.js"></script>
+
+<!--script type="text/javascript" src="libs/touch.js"></script-->
+
+<script type="text/javascript" src="libs/iscroll-infinite.js"></script>
+
+<script type="text/javascript" src="libs/require.js" data-main="main.js"></script>
+
+<script>
+window.less = {
+    env: {
+        silent: true
+    }
+};
+require(["libs/less-1.7.3.js"]);
+</script>
 
 </html>

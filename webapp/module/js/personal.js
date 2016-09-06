@@ -5,19 +5,23 @@ define(function(require, exports, module) {
 
     var Clas = BClass.extend({
         initialize: function(options) {
-            console.log('bottom..........initialize..options:' + options);
+            console.log('test..........initialize..options:' + options);
         },
         loadData: function() {
             return $.Deferred().resolve();
         },
         viewDidHide: function() {
-            console.log('bottom..........viewDidHide...');
+            console.log('test..........viewDidHide...');
         },
         viewDidShow: function() {
-            console.log('bottom..........viewDidShow...');
+            console.log('test..........viewDidShow...');
+        },
+        viewDidInit: function() {
+            console.log('test..........viewDidInit...');
+
         },
         viewDidDestroy: function() {
-            console.log('bottom..........viewDidDestroy...');
+            console.log('test..........viewDidDestroy...');
         }
     });
 
